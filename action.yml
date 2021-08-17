@@ -1,0 +1,31 @@
+# Arweave upload file
+name: 'Arweave upload directory'
+description: 'Upload a directory to the Arweave blockchain'
+inputs:
+  key_file_content:
+    description: 'Arweave key file content'
+    required: true
+    default: false
+  dir_path:
+    description: 'Path to the directory to be uploaded'
+    required: true
+    default: false
+  ignore_index:
+    description: 'Ignore index.html as the upload index'
+    required: false
+    default: true
+outputs:
+  arweave_url:
+    description: 'The Arweave URL your file will be available at once mined'
+  cost:
+    description: 'Transaction cost'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.key_file_content }}
+    - ${{ inputs.file_path }}
+    - ${{ inputs.ignore_index }}
+branding:
+  icon: 'package'  
+  color: 'gray-dark'
