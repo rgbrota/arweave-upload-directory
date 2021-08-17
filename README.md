@@ -1,4 +1,4 @@
-# Arweave-upload-file v1
+# Arweave-upload-directory v1
 
 ## Overview
 
